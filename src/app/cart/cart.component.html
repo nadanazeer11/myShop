@@ -1,0 +1,81 @@
+<!-- <div class="container">
+    <div class="card">
+        <h5 class="card-title">My Cart</h5>
+    </div>
+    <div class="center">
+        <img src="assets/img/cart.png" alt="">
+        <h4>Your cart is empty</h4>
+    </div>
+</div> -->
+<h1><em>My Cart</em> </h1>
+<div class="mycart">
+
+  <div class="cart">
+    <table class="  table table-hover  text-center" >
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Image</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Total</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let p of products,let i =index">
+        <th scope="row">{{i+1}}</th>
+        <td> <img src="{{p.url}}" alt=""></td>
+        <td>{{p.name}}</td>
+        <td>{{p.price}}</td>
+        <button type="button" class="btn btn-info" (click)="addq(p)">+</button>
+        <span><td>{{p.quantity}}</td></span>
+        <button type="button" class="btn btn-info"(click)="decq(p) ">-</button>
+        <td>{{p.total}}</td>
+        <td>{{p.total}}</td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+  <div class="formm">
+    <!-- (ngSubmit)="submitForm() " -->
+  <form >
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" name="name" placeholder="Enter Your Name" [(ngModel)]="name">
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" name="address" placeholder="Enter Your Address" [(ngModel)]="address">
+      </div>
+      <br>
+    <div class="form-group">
+      <label for="cc">Credit Card Number</label>
+      <input type="text" name="cc" placeholder="Enter Your Credit Card Number" [(ngModel)]="creditCardNum">   
+      <p><small id="cc" class="form-text text-muted">We'll never share your Credit card info with anyone else.</small></p>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Check Out</button>
+  </form>
+  </div>
+</div>
+  <!-- <form class="f">
+    <div class="form-group">
+      <label for="exampleInputEmail1"> Name</label>
+      <input type="text" name="name" placeholder="Enter Your Name" [{ngModel}]="name">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <form>
+    <input type="text" name="name" placeholder="Enter Your Name" [{ngModel}]="name">
+  </form> -->

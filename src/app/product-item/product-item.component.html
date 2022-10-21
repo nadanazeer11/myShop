@@ -1,0 +1,18 @@
+
+<div class="product-container">
+  <button> <img src="{{item.url}}" alt=""class="product-image"></button> 
+    <h1 class="text">{{item.name}}</h1>
+    <p class="text">{{item.price}}</p>
+    <!-- <button type="button" class="btn"(click)="addq(item)" ><i class="fa fa-plus" ></i></button> -->
+    <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon" class="q" (click)="addq()" >
+      <mat-icon >+1</mat-icon>
+    </button>
+    <span>{{quantvar}}</span>
+    <button mat-mini-fab  aria-label="Example icon button with a minus one icon" class="q"(click)="minusq()" >
+      <mat-icon >-1</mat-icon>
+    </button>
+    <!-- <button type="button" class="btn"(click)="minusq(item)" ><i class="fa fa-minus"></i></button> -->
+    <br>
+    <br>
+    <button mat-raised-button color="primary" (click)="addToCart(item)">Add To Cart!</button>
+</div>

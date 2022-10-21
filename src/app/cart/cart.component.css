@@ -1,0 +1,27 @@
+
+img{
+   height: 45px ;
+   text-align: center;
+}
+
+.table{
+    width: 230px;
+    display: inline;
+}
+.mycart{
+    margin-top: 45px;
+    
+}
+.cart{
+    width: 1700px;
+    display: inline;
+    margin-left: 340px;
+   
+}
+.formm{
+    float: right;
+    margin-right: 252px;
+}
+label{
+    padding-right: 14px;
+}
