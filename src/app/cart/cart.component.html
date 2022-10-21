@@ -32,14 +32,15 @@
         <span><td>{{p.quantity}}</td></span>
         <button type="button" class="btn btn-info"(click)="decq(p) ">-</button>
         <td>{{p.total}}</td>
-        <td>hey</td>
+        
       </tr>
     </tbody>
     </table>
+    <label for="Total Price">Total Price:{{totalP}}</label>
   </div>
   <div class="formm">
-    <!-- (ngSubmit)="submitForm() " -->
-  <form >
+   
+  <form  (ngSubmit)="submitForm() " >
     <div class="form-group">
       <label for="name">Full Name</label>
       <input type="text" name="name" placeholder="Enter Your Name" [(ngModel)]="name">
@@ -56,10 +57,12 @@
       <p><small id="cc" class="form-text text-muted">We'll never share your Credit card info with anyone else.</small></p>
     </div>
     <br>
-    <button type="submit" class="btn btn-primary">Check Out</button>
+    <button type="submit" class="btn btn-primary" routerLink="/confirm"
+    >Check Out</button>
   </form>
   </div>
 </div>
+
   <!-- <form class="f">
     <div class="form-group">
       <label for="exampleInputEmail1"> Name</label>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Item } from '../models/Items';
 import { SharedService } from '../service/shared.service';
 import { cartItem } from '../models/cartItem';
+import { det } from '../models/confDetails';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -13,7 +14,16 @@ export class CartComponent implements OnInit {
   public name:string='';
   public address:string='';
   public creditCardNum:string='';
-  constructor(private sharedService:SharedService) { }
+  public isShowB:boolean=false;
+  public totalP:number=0;
+  public details:det;
+  constructor(private sharedService:SharedService) {
+    this.totalP=this.sharedService.getTotalPrice();
+    this.details={
+      name:'',
+      price:0
+    }
+   }
 
   ngOnInit(): void {
     // this.sharedService.getProducts().subscribe
@@ -26,10 +36,19 @@ export class CartComponent implements OnInit {
   }
   addq(i:cartItem):void{
     this.sharedService.cartPlus(i);
+    this.totalP=this.sharedService.getTotalPrice();
   }
   decq(i:cartItem):void{
-    console.log("aaaa");
-    console.log(i);
-    this.sharedService.cartMinus(i);
+    this.isShowB=this.sharedService.cartMinus(i);
+    this.totalP=this.sharedService.getTotalPrice();
   }
+ 
+  submitForm():void{
+    this.details.name=this.name;
+    this.details.price=this.totalP;
+    console.log("cart",this.details);
+    this.sharedService.setDet(this.details);
+   
+  }
+  
 }
