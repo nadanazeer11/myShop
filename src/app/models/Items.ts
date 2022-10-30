@@ -3,17 +3,12 @@ export class Item{
     name:string;
     price:number;
     url: string;
-    description:string;
-    quantity :number;
-    total :number;
-
+    description:string
     constructor(){
         this.id=1;
         this.name='';
         this.price=0;
         this.url='';
-        this.description='';
-        this.quantity=0;
-        this.total=0;
+        this.description=''
     }
 }

@@ -17,9 +17,7 @@ export class ProductItemComponent implements OnInit {
     name:'',
     price:0,
     url:'',
-    description:'',
-    quantity:0,
-    total:0
+    description:''
   }
   // this.cartitem={
   //   id:0,
@@ -37,14 +35,8 @@ export class ProductItemComponent implements OnInit {
     let cartitem=new cartItem(item.id,item.name,item.price,item.url,this.quantvar,0);
     console.log(cartitem)
     this.sharedService.addtoCart(cartitem);
-    // item.quantity=this.quantvar;
-    // this.sharedService.addtoCart(item);
-    // this.quantvar=0;
+
   }
-// add(item:Item):void{
-//   // alert("Added to cart")
-//   this.sharedService.sendClickEvent();
-// }private sharedService:SharedService
 
 addq():void{
  

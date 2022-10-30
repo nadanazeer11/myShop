@@ -8,12 +8,15 @@ import { det } from '../models/confDetails';
   providedIn: 'root'
 })
 export class SharedService {
-public productList=new BehaviorSubject<Item []>([]);
+public productList=Item[]=[];
 public cartList:cartItem[]=[];
 public details:det;
 
 constructor(){
   this.details={name:'',price:0}
+}
+getAllProducts(){
+
 }
 getProducts(){
   return this.cartList;
